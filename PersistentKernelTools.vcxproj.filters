@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="DeviceGlobalMemoryArray.cpp">
+      <Filter>Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="ManagedMemoryArray.cpp">
+      <Filter>Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="MappedMemoryArray.cpp">
+      <Filter>Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="PageAbleMemoryArray.cpp">
+      <Filter>Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="PinnedMemoryArray.cpp">
+      <Filter>Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="QeueD2H.cpp">
+      <Filter>Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="QeueH2D_Device.cpp">
+      <Filter>Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="QeueH2D_Host.cpp">
+      <Filter>Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="CudaCheckErrors.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DeviceGlobalMemoryArray.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ManagedMemoryArray.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="MappedMemoryArray.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="PageAbleMemoryArray.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="PinnedMemoryArray.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="QeueD2H.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="QeueH2D_Host.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="QeueHeader.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="QeueItemStatus.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="QeueH2D_Device.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{05a8685e-9e7b-453a-b106-36994a3607a7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources">
+      <UniqueIdentifier>{25906d06-c0e9-48d0-9e4b-071138ea4565}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <CudaCompile Include="kernel.cu" />
+  </ItemGroup>
+</Project>
