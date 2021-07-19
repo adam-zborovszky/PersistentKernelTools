@@ -1,0 +1,27 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31321.278
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{A1338F19-1273-45EF-9577-2D372D6965AC}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "PersistentKernelTools", "PersistentKernelTools.vcxproj", "{A35676CE-E18F-4D9F-83EE-9620D6C761F4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A35676CE-E18F-4D9F-83EE-9620D6C761F4}.Debug|x64.ActiveCfg = Debug|x64
+		{A35676CE-E18F-4D9F-83EE-9620D6C761F4}.Debug|x64.Build.0 = Debug|x64
+		{A35676CE-E18F-4D9F-83EE-9620D6C761F4}.Release|x64.ActiveCfg = Release|x64
+		{A35676CE-E18F-4D9F-83EE-9620D6C761F4}.Release|x64.Build.0 = Release|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {34510420-6615-453B-818E-06C14EA3C166}
+	EndGlobalSection
+EndGlobal
