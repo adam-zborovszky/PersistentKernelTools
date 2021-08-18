@@ -30,7 +30,7 @@ template<class item_t> QeueH2D_Host<class item_t>::QeueH2D_Host(int size)
 	
 	// create the device copy of this qeue class
 	CudaCheckErrors(cudaMalloc(&_deviceQeueOnDevice, sizeof(QeueH2D_Device<item_t>)); // allocate mem on device to copy this class
-	CudaCheckErrors(cudaMemcpy(_deviceQeueOnDevice, _deviceQeueOnHost, sizeof(QeueH2D_Device<item_t>), cudaMemcpyHostToDevice)); // copy
+	CudaCheckErrors(cudaMemcpy(_deviceQeueOnDevice, _deviceQeueOnHost, sizeof(QeueH2D_Device<item_t>), cudaMemcpyHostToDevice)); // (syncronized) copy of device qeue
 
 	cudaStreamCreate(&copyStream);
 	cudaEventCreate(&copyDoneEvent);
@@ -40,8 +40,9 @@ template<class item_t> QeueH2D_Host<class item_t>::QeueH2D_Host(int size)
 template<class item_t>
 QeueH2D_Host<class item_t>::~QeueH2D_Host()
 {
-	// delete device side instance
-	_deviceQeueOnHost.
+	// free device qeue internal allocation
+	_deviceQeueOnHost.Destruct();
+	// free device qeue object
 	cudaFree(_deviceQeueOnDevice);
 	free(_deviceQeueOnHost); 
 	
@@ -67,7 +68,7 @@ template<class item_t>
 int QeueH2D_Host<class item_t>::GetItemForWrite()
 {
 	int itemIndex = _pushToHere;
-	item_t* itemStatusPointer = _statuses.HostPointer + itemIndex;
+	QeueItemStatus* itemStatusPointer = _statuses.HostPointer + itemIndex;
 	if (*itemStatusPointer == QeueItemStatus::Free)
 	{
 		*itemStatusPointer = QeueItemStatus::WriteLocked;
@@ -82,10 +83,10 @@ int QeueH2D_Host<class item_t>::GetItemForWrite()
 template<class item_t>
 bool QeueH2D_Host<class item_t>::SetItemToReady(int itemIndex)
 {
-	item_t* itemStatusPointer = _statuses.HostPointer + itemIndex;
+	QeueItemStatus* itemStatusPointer = _statuses.HostPointer + itemIndex;
 	if (*itemStatusPointer == QeueItemStatus::WriteLocked)
 	{
-		_items[itemIndex].copyToHost()
+		_items[itemIndex].copyToDevice()
 		*itemStatusPointer = QeueItemStatus::Ready;
 		return true;
 	}

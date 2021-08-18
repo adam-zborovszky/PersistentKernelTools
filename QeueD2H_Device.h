@@ -31,3 +31,12 @@ public:
 	__device__ bool SetItemToFree(int index);
 	__device__ item_t* GetItemPointer(int itemIndex);
 };
+
+
+
+
+
+
+
+
+

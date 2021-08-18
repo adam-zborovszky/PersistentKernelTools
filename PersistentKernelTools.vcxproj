@@ -99,10 +99,11 @@
   <ItemGroup>
     <ClInclude Include="DeviceGlobalMemoryArray.h" />
     <ClInclude Include="CudaCheckErrors.h" />
+    <ClInclude Include="QeueD2H_Host.h" />
     <ClInclude Include="QeueH2D_Device.h" />
     <ClInclude Include="QeueHeader.h" />
     <ClInclude Include="PageAbleMemoryArray.h" />
-    <ClInclude Include="QeueD2H.h" />
+    <ClInclude Include="QeueD2H_Device.h" />
     <ClInclude Include="ManagedMemoryArray.h" />
     <ClInclude Include="MappedMemoryArray.h" />
     <ClInclude Include="QeueH2D_Host.h" />

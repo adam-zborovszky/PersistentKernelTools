@@ -29,12 +29,12 @@ private:
 	int _pushToHere; // next item index to push item into
 	QeueItemStatus* _statuses; // array of item statuses
 	item_t** _items; // array of item pointers
-	QeueH2D_Device<item_t>* _deviceQeueOnDevice; // a pointer to the device side qeue object, as it is created and initialized by the host class
-	QeueH2D_Device<item_t>* _deviceQeueOnHost; // the host side instance for init and copy purposes
+	QeueH2D_Device<item_t>* _deviceQeueOnDevice; // a pointer to the device side qeue, as it is created and initialized by the host class
+	QeueH2D_Device<item_t>* _deviceQeueOnHost; // the host side instance of the device qeue for init and copy purposes
 public:
 	QeueH2D_Host(int size);
 	~QeueH2D_Host();
-	QeueH2D_Device<item_t>* GetDeviceQeue();
+	QeueH2D_Device<item_t>* GetDeviceQeue(); // get device pointe to the qeue to pass to the kernel as a parameter
 	int GetItemForWrite();
 	bool SetItemToReady(int itemIndex);
 	item_t* GetItemPointer(int itemIndex);

@@ -26,7 +26,7 @@ void QeueH2D_Device<class item_t>::Destruct()
 	for (int i = 0; i < _size; i++)
 		cudaFree(_items[i]);
 	cudaFree(_items);
-	// this class contains only a mapping pointer to statuses, the allocation is handled in the device qeue class
+	// this class contains only a mapping pointer to statuses, the allocation is handled in the host qeue class
 }
 
 
@@ -43,7 +43,7 @@ __device__ int QeueH2D_Device<class item_t>::GetItemForRead()
 			atomicInc(&_popFromHere, _size); // increment (does not matter if threads increment in swapped order as actual value is used for access)
 			return itemIndex;
 		}
-	} while (readStatus == QeueItemStatus::ReadLocked || popFromHereActual < _popFromHere) // maybe another thread successfully popped this item
+	} while (readStatus == QeueItemStatus::ReadLocked || popFromHereActual < _popFromHere) // redo if another thread has successfully popped this item meanwhile
 		return -1; // the qeue is empty
 }
 
